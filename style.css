@@ -1,6 +1,10 @@
 :root {
-    --header-and-footer: rgb(228, 253, 255);
-    --body-col: rgb(203, 252, 255);
+    --header-and-footer: #1e1e1e;
+    --text-col: #fff;
+    --body-col: #1e1e1e;
+    --primary-col: #8fb3ff;
+    --secondary-col: #ebf1ff;
+    --accent-col: #d41d6d;
 }
 
 * {
@@ -14,13 +18,14 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: grid;
     grid-template-rows: 2fr 1fr 16fr 1fr;
-    /* background-color: var(--body-col); */
+    background-color: var(--body-col);
+    color: var(--text-col);
 }
 
 .header {
     display: flex;
     justify-content: center;
-    padding: 16px;
+    padding: 20px 20px 40px 20px;
     font-size: 32px;
     font-weight: bold;
     background-color: var(--header-and-footer);
@@ -34,11 +39,29 @@ body {
     margin: 20px;
 }
 
+#submit-search {
+    cursor: pointer;
+    background-color: var(--primary-col);
+    box-shadow: 0px 2px 10px rgba(143, 179, 255, 0.3);
+}
+
+#submit-search:hover {
+    background-color: #78a1fa;
+}
+
+#submit-search:active {
+    background-color: #6490ec;
+}
+
 input {
     padding: 8px 16px 8px 16px;
     font-size: 1.1rem;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#city-search-input {
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.3);
 }
 
 .weather-info-section {
@@ -49,17 +72,27 @@ input {
 }
 
 .weather-info-container {
-    width: 50%;
-    height: 100%;
-    background-color: rgb(231, 231, 231);
+    width: clamp(400px, 50%, 800px);
+    background-color: var(--secondary-col);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     font-size: 2rem;
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+#country {
+    font-size: 2.5rem;
     font-weight: bold;
+}
+
+#city {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
 }
 
 .footer {
